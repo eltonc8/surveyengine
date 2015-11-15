@@ -1,17 +1,52 @@
-SurveyEngine.Models.SurveyQuestion = Backbone.Model.extend({});
+SurveyEngine.Models.SurveyQuestion = Backbone.Model.extend({
+  validates: function(){
+    return true;
+  }
+});
 
 SurveyEngine.Models.TextQuestion = SurveyEngine.Models.SurveyQuestion.extend({
-  type: "text"
+  type: "text",
+
+  initialize: function(){
+    this.response = "";
+  },
+
+  validates: function(){
+    return this.response.length > 0;
+  }
 });
 
 SurveyEngine.Models.RadioQuestion = SurveyEngine.Models.SurveyQuestion.extend({
-  type: "radio"
+  type: "radio",
+
+  initialize: function(){
+    this.response = -1;
+    this.choices = [];
+  },
+
+  validates: function(){
+    return this.response >= 0;
+  }
 });
 
 SurveyEngine.Models.CheckboxQuestion = SurveyEngine.Models.SurveyQuestion.extend({
-  type: "checkbox"
+  type: "checkbox",
+
+  initialize: function(){
+    this.response = [];
+    this.choices = [];
+  }
 });
 
 SurveyEngine.Models.DropdownQuestion = SurveyEngine.Models.SurveyQuestion.extend({
-  type: "dropdown"
+  type: "dropdown",
+
+  initialize: function(){
+    this.response = -1;
+    this.choices = [];
+  },
+
+  validates: function(){
+    return this.response >= 0;
+  }
 });

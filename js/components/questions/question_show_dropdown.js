@@ -4,13 +4,20 @@ var QuestionShowDropdown = React.createClass({
   },
 
   render: function(){
+    var choices = [["", "choose one"]],
+      response = this.props.requestion.response;
+
+    _.each(this.props.question.choices, function(choice){
+      choices.push([choice, choice]);
+    });
+
     return (
       <select name="{this.props.question.stem}">
       {
-        this.props.question.choices.map(function(choice){
+        choices.map(function(choice_pair, idx){
           return (
-            <option value="{choice}">
-              {choice}
+            <option value="{choice_pair[0]}" >
+              { choice_pair[1] }
             </option>
           )
         })
@@ -19,3 +26,5 @@ var QuestionShowDropdown = React.createClass({
     )
   },
 });
+
+//{ choice_pair[0] == response + 1 ? "selected" : "" }
