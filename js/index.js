@@ -19,4 +19,5 @@ insertScript("js/collections/survey_questions.js");
 
 // react components
 insertScript("js/components/survey_edit.js", true);
+insertScript("js/components/question_edit.js", true);
 insertScript("js/components/survey_menu.js", true);

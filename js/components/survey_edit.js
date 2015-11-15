@@ -16,6 +16,8 @@ var SurveyEdit = React.createClass({
   },
 
   render: function(){
+    var list = SurveyEngine.Collections.surveyQuestions;
+
     return (
       <div>
         <h4>Survey Editor</h4>
@@ -28,8 +30,13 @@ var SurveyEdit = React.createClass({
           <li onClick={this.handleClick} data-add-type="text">Text Question</li>
         </ul>
 
-        <div className="question-edit">
-        </div>
+        <ul className="question-edit">
+        {
+          list.map(function(question, idx){
+            return (<QuestionEdit question={question} number={idx + 1}/>)
+          })
+        }
+        </ul>
       </div>
     )
   },
