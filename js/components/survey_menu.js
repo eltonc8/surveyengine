@@ -18,6 +18,10 @@ var SurveyMenu = React.createClass({
           <li onClick={this.handleClick} data-action="edit">Edit Mode</li>
           <li onClick={this.handleClick} data-action="active">Active Mode</li>
         </ul>
+
+        <div className="action">
+          <SurveyEdit />
+        </div>
       </div>
     )
   },
