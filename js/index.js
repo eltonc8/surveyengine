@@ -1,5 +1,6 @@
-function insertScript(fileName){
+function insertScript(fileName, is_jsx){
   var script = $("<script>").attr("src", fileName);
+  if (is_jsx) script.attr("type", "text/jsx");
   $("#scripts").append(script);
 }
 
@@ -16,5 +17,5 @@ insertScript("js/survey_engine.js");
 insertScript("js/models/survey_question.js");
 insertScript("js/collections/survey_questions.js");
 
-
 // react components
+insertScript("js/components/survey_menu.js", true);
