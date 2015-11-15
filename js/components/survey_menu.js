@@ -20,7 +20,7 @@ var SurveyMenu = React.createClass({
         </ul>
 
         <div className="action">
-          <SurveyEdit />
+          {this.state.action == "edit" ? <SurveyEdit /> : <SurveyActive />}
         </div>
       </div>
     )

@@ -18,6 +18,12 @@ insertScript("js/models/survey_question.js");
 insertScript("js/collections/survey_questions.js");
 
 // react components
+insertScript("js/components/survey_active.js", true);
+insertScript("js/components/questions/question_show.js", true);
+insertScript("js/components/questions/question_show_radio.js", true);
+insertScript("js/components/questions/question_show_dropdown.js", true);
+insertScript("js/components/questions/question_show_checkbox.js", true);
+
 insertScript("js/components/survey_edit.js", true);
-insertScript("js/components/question_edit.js", true);
+insertScript("js/components/questions/question_edit.js", true);
 insertScript("js/components/survey_menu.js", true);
