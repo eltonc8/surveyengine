@@ -1,18 +1,20 @@
-function getScript(fileName){
+function insertScript(fileName){
   var script = $("<script>").attr("src", fileName);
   $("#scripts").append(script);
 }
 
 // utilities
-getScript("js/utils/underscore-min.js");
-getScript("js/utils/backbone-min.js");
+insertScript("js/utils/underscore-min.js");
+insertScript("js/utils/backbone-min.js");
+insertScript("js/utils/react-0.13.3.js");
+insertScript("js/utils/JSXTransformer-0.13.3.js");
 
 // application specific
-getScript("js/survey_engine.js");
+insertScript("js/survey_engine.js");
 
-// templates
-getScript("js/templates/survey/survey.js");
+// backbone components
+insertScript("js/models/survey_question.js");
+insertScript("js/collections/survey_questions.js");
 
-// components
-getScript("js/views/survey_engine.js");
-getScript("js/routers/survey_engine_router.js");
+
+// react components

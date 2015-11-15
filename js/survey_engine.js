@@ -3,15 +3,5 @@ window.SurveyEngine = {
   Collections: {},
   Views: {},
   Routers: {},
-  initialize: function() {
-    debugger
-    SurveyEngine.Routers.router = new SurveyEngine.Routers.SurveyEngineRouter({$rootEl: $("#content")});
-    Backbone.history.start();
-  }
+  initialize: function(){}
 };
-
-window.JST = {};
-
-$(document).ready(function(){
-  SurveyEngine.initialize();
-});

@@ -1,1 +1,1 @@
-SurveyEngine.Models.SurveyQuestions = Backbone.Model.extend({});
+SurveyEngine.Models.SurveyQuestion = Backbone.Model.extend({});
