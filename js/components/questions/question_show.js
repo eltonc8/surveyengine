@@ -16,7 +16,7 @@ var QuestionShow = React.createClass({
         input = <QuestionShowDropdown question={question}/>
         break;
       default:
-        input = <input className="question-input" type="text" name={this.props.question.stem}/>
+        input = <QuestionShowText question={question}/>
         break;
     }
 

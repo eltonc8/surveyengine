@@ -20,7 +20,7 @@ SurveyEngine.Models.RadioQuestion = SurveyEngine.Models.SurveyQuestion.extend({
   type: "radio",
 
   initialize: function(){
-    this.response = -1;
+    this.response = "";
     this.choices = [];
   },
 
@@ -42,7 +42,7 @@ SurveyEngine.Models.DropdownQuestion = SurveyEngine.Models.SurveyQuestion.extend
   type: "dropdown",
 
   initialize: function(){
-    this.response = -1;
+    this.response = "";
     this.choices = [];
   },
 

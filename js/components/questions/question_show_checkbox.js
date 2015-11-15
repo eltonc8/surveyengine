@@ -12,7 +12,8 @@ var QuestionShowCheckbox = React.createClass({
       {
         this.props.question.choices.map(function(choice, idx){
           return (
-            <input type="checkbox" name={name} value="{choice}" defaultChecked={response.indexOf(choice) >= 0}>
+            <input type="checkbox" name={name} value={choice}
+              defaultChecked={response.indexOf(choice) >= 0}>
               {choice}
             </input>
           );

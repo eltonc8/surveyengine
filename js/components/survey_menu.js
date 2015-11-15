@@ -4,7 +4,7 @@ var SurveyMenu = React.createClass({
   },
 
   handleClick: function (event){
-    var action = event.currentTarget.getAttribute("data-action")
+    var action = event.currentTarget.getAttribute("data-action");
     this.setState({action: action});
   },
 

@@ -20,6 +20,7 @@ insertScript("js/collections/survey_questions.js");
 // react components
 insertScript("js/components/survey_active.js", true);
 insertScript("js/components/questions/question_show.js", true);
+insertScript("js/components/questions/question_show_text.js", true);
 insertScript("js/components/questions/question_show_radio.js", true);
 insertScript("js/components/questions/question_show_dropdown.js", true);
 insertScript("js/components/questions/question_show_checkbox.js", true);
