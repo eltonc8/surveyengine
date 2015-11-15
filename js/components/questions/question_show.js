@@ -4,7 +4,7 @@ var QuestionShow = React.createClass({
   },
 
   render: function(){
-    var input, question = this.props.question;
+    var input, issues, question = this.props.question;
     switch (this.props.question.type) {
       case "radio":
         input = <QuestionShowRadio question={question}/>
@@ -20,9 +20,16 @@ var QuestionShow = React.createClass({
         break;
     }
 
+    if (this.props.validating && !this.props.question.validates()) {
+      issues = (
+        <div className="issue">please fill out this field</div>
+      )
+    }
+
     return (
       <li>
         <h5 className="question-stem">{this.props.number} {this.props.question.stem} </h5>
+        {issues}
 
         <div className="question-answer">
           {input}

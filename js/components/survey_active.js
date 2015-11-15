@@ -1,18 +1,23 @@
 var SurveyActive = React.createClass({
   getInitialState: function(){
     return {
-      status: "please fill out the following information"
+      status: "please fill out the following information",
+      validating: false,
     };
   },
 
   handleSubmit: function(event){
     event.preventDefault();
-    console.log(event.currentTarget)
-    this.setState({status: "successfully submitted"});
+    if ( SurveyEngine.Collections.surveyQuestions.every( function(q){return q.validates() }) ){
+      this.setState({validating: true, status: "successfully submitted"});
+    } else {
+      this.setState({validating: true, status: "there are issues with the form"});
+    }
   },
 
   render: function(){
-    var list = SurveyEngine.Collections.surveyQuestions;
+    var list = SurveyEngine.Collections.surveyQuestions,
+        validating = this.state.validating;
 
     return (
       <div>
@@ -23,7 +28,7 @@ var SurveyActive = React.createClass({
           <ul className="survey-active">
           {
             list.map(function(question, idx){
-              return (<QuestionShow question={question} number={idx + 1}/>)
+              return (<QuestionShow question={question} validating={validating} number={idx + 1}/>)
             })
           }
           </ul>

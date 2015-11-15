@@ -25,7 +25,7 @@ SurveyEngine.Models.RadioQuestion = SurveyEngine.Models.SurveyQuestion.extend({
   },
 
   validates: function(){
-    return this.response >= 0;
+    return this.response != "";
   }
 });
 
@@ -47,6 +47,6 @@ SurveyEngine.Models.DropdownQuestion = SurveyEngine.Models.SurveyQuestion.extend
   },
 
   validates: function(){
-    return this.response >= 0;
+    return this.response != "";
   }
 });
